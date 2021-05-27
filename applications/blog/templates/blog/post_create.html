@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+
+
+
+{% block title %}
+Crear Post
+{% endblock title %}
+
+{% block content %}
+
+
+<h1>Crear Post!</h1>
+<form method="post"> {% csrf_token %}
+    <div class="mb-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Autor</label>
+        </div>
+        <div class="mb-3">
+            {{form.autor}}
+        </div>
+    </div>
+    <div class="mb-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        </div>
+        <div class="mb-3">
+            {{form.titulo}}
+        </div>
+    </div>
+
+    <div class="mb-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Texto</label>
+        </div>
+        <div class="mb-3">
+            {{form.texto}}
+        </div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary mb-3">Crear</button>
+</form>
+
+{%endblock%}
